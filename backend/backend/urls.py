@@ -55,7 +55,6 @@ urlpatterns = [
     path("api/matches/", MatchListView.as_view(), name="matches_list"),
 
     # Messages
-    path("api/matches/", MatchListView.as_view(), name="matches_list"),
     path(
         "api/matches/<int:pk>/messages/",
         MatchMessageListCreateView.as_view(),
