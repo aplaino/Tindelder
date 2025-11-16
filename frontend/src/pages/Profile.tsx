@@ -1,6 +1,31 @@
 import DeckCard from "../components/DeckCard";
+import {useEffect} from "react"
 
-export default function Profile() {
+
+export default function Profile({accessToken} : any) {
+
+  console.log("The access token is: "+ accessToken)
+  
+  const fetchData = async()=>{
+    const res = await fetch(`http://127.0.0.1:8000/api/profile/me`, {
+      headers:{
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+    if (!res.ok) throw new Error("Res is not ok. " + res.status);
+    const data = await res.json();
+    console.log(data);
+  }
+
+  useEffect(()=>{
+    const fetchFunction =async()=>{
+      fetchData()
+    }
+    fetchFunction();
+  })
+
+  console.log(accessToken);
+
   return (
     <div className="bg-[#F8F4EB] min-h-screen min-w-screen px-20 font-gs">
       <div

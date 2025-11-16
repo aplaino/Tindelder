@@ -2,30 +2,7 @@ import landingImg from "../assets/images/landing.png";
 import { useEffect } from "react";
 
 export default function Landing() {
-  const fetchData = async () => {
-    const res = await fetch("http://127.0.0.1:8000/api/auth/register/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username: "12345678",
-        password1: "12345678",
-        password2: "12345678",
-        email: "12345678@gmail.com"
-      })
-    });
-    if (!res.ok) throw new Error("HTTP error: " + res.status);
-    const data = await res.json();
-    console.log(data.username);
-  };
 
-  useEffect(() => {
-    const fetchFunction = async () => {
-      fetchData();
-    };
-    fetchFunction();
-  });
 
   return (
     <div className="bg-[#F8F4EB] h-auto min-w-screen">

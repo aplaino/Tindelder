@@ -1,4 +1,5 @@
 import { RxArrowTopRight } from "react-icons/rx";
+import {Link} from "react-router-dom";
 
 export default function SigninCard() {
   return (
@@ -11,20 +12,20 @@ export default function SigninCard() {
         Sounds <br /> good to me
       </h2>
       <div className="flex flex-col justify-between items-center h-25 text-xl">
-        <button
+        <Link to="authSignIn  "
           className="bg-black text-white w-35 cursor-pointer
                 py-2 rounded-3xl
                 flex justify-center items-center"
         >
           Sign up <RxArrowTopRight />
-        </button>
-        <button
+        </Link>
+        <Link to="authRegister"
           className="bg-[#f8f4eb] text-black w-35 border-2 cursor-pointer
                 py-2 rounded-3xl
                 flex justify-center items-center"
         >
           Register
-        </button>
+        </Link>
       </div>
     </div>
   );
