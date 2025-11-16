@@ -4,7 +4,9 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import {useState} from "react"
 import Deck from "./pages/Deck";
+import Deck2 from "./pages/Deck2";
 import Matches from "./pages/Matches";
+import Matched from "./pages/Matched";
 import Profile from "./pages/Profile";
 import AuthRegister from "./pages/AuthRegister.tsx";
 import AuthSignIn from "./pages/AuthSignIn.tsx";
@@ -16,7 +18,9 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="deck" element={<Deck />} />
+        <Route path="deck2" element={<Deck2 />} />
         <Route path="match" element={<Matches />} />
+        <Route path="matched" element={<Matched />} />
         <Route path="profile" element={<Profile accessToken={accessToken} />} />
         <Route
           path="authRegister"

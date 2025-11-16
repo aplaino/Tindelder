@@ -1,3 +1,4 @@
+import profile2 from "../assets/images/profile2.png"
 export default function MatchCard() {
   return (
     <div className="relative group">
@@ -5,6 +6,7 @@ export default function MatchCard() {
       <div
         className="bg-gray-400 border-2 h-75 w-60 rounded-2xl absolute
       transform transition duration-300 group-hover:-translate-y-20"
+        style={{ backgroundImage: `url(${profile2})` }}
       ></div>
       {/** -- card front (words) */}
       <div
