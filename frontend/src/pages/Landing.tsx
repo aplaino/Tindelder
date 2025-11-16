@@ -1,6 +1,21 @@
 import landingImg from "../assets/images/landing.png";
+import {useEffect} from "react"
 
 export default function Landing() {
+  const fetchData = async () => {
+    const res = await fetch("http://127.0.0.1:8000/api/auth/register/");
+    if (!res.ok) throw new Error("Got Error: HTTP");
+    const data = await res.json();
+    console.log(data);
+  };
+
+  useEffect(()=>{
+    const fetchFunction = async()=>{
+      fetchData();
+    }
+    fetchFunction();
+  })
+  
   return (
     <div className="bg-[#F8F4EB] h-auto min-w-screen">
       {/* ---- upper text section for landing tedxt and its surrounding texts ---- */}
@@ -42,7 +57,7 @@ export default function Landing() {
         <img
           className="w-full h-100 absolute object-cover -top-30"
           src={landingImg}
-          alt="hi"  
+          alt="hi"
         />
       </section>
     </div>
